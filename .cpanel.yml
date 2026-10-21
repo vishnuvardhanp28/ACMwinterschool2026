@@ -1,1 +1,4 @@
-
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/srmaphosting/public_html/winterschool2026.srmap.acm.org
+    - /bin/cp -R * $DEPLOYPATH
