@@ -8,9 +8,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
+        tailwind.config = {            theme: {
                 extend: {
                     colors: {
                         acm: {
@@ -51,14 +49,6 @@
                 linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
         }
-
-        .dark .bg-grid-pattern {
-            background-size: 30px 30px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-        }
-
         .card-hover {
             transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -67,7 +57,7 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen antialiased selection:bg-acm-blue selection:text-white">
+<body class="bg-slate-50 text-slate-800 min-h-screen antialiased selection:bg-acm-blue selection:text-white">
 
     <!-- Top Announcement Bar -->
     <div class="bg-slate-900 text-slate-100 text-xs py-2 px-4 border-b border-slate-800">
@@ -83,7 +73,7 @@
     </div>
 
     <!-- Navigation Bar -->
-    <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md">
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Brand & Official Logo -->
@@ -91,15 +81,15 @@
                 <!-- SVG Official ACM Blue Badge Logo -->
                 <img src="acm-logo.png" alt="ACM Logo" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
 
-                <div class="h-8 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block"></div>
+                <div class="h-8 w-px bg-slate-200 hidden sm:block"></div>
                 <div>
                     <span class="text-xs font-bold tracking-wider text-acm-blue uppercase block font-mono">India Council</span>
-                    <span class="text-sm font-extrabold text-slate-900 dark:text-white tracking-tight">Winter School 2026</span>
+                    <span class="text-sm font-extrabold text-slate-900 tracking-tight">Winter School 2026</span>
                 </div>
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-wide uppercase text-slate-600 dark:text-slate-300">
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-wide uppercase text-slate-600">
                 <a href="#about" class="hover:text-acm-blue transition-colors">About</a>
                 <a href="#curriculum" class="hover:text-acm-blue transition-colors">Curriculum</a>
                 <a href="#coordinators" class="hover:text-acm-blue transition-colors">Coordinators</a>
@@ -109,67 +99,57 @@
 
             <!-- Actions Right -->
             <div class="flex items-center space-x-4">
-                <!-- Theme Toggle Button -->
-                <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle Theme" class="p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-acm-blue transition-all">
-                    <i id="themeIcon" class="fa-solid fa-moon"></i>
-                </button>
-
-                <!-- CTA Button -->
-                <a href="#about" class="px-4 py-2.5 rounded-lg bg-acm-blue hover:bg-acm-darkBlue text-white font-bold text-xs tracking-wider uppercase transition-colors shadow-sm">
-                    Apply Now
-                </a>
-
                 <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileNav()" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+                <button onclick="toggleMobileNav()" class="md:hidden p-2 rounded-lg border border-slate-200 text-slate-700">
                     <i class="fa-solid fa-bars text-lg"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Navigation Drawer -->
-        <div id="mobileNav" class="hidden md:hidden px-4 pt-2 pb-6 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 space-y-3 text-sm font-medium">
-            <a href="#about" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700 dark:text-slate-200">About</a>
-            <a href="#curriculum" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700 dark:text-slate-200">Curriculum</a>
-            <a href="#coordinators" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700 dark:text-slate-200">Coordinators</a>
-            <a href="#logistics" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700 dark:text-slate-200">Logistics & Accommodation</a>
-            <a href="#recap" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700 dark:text-slate-200">2024 Edition Recap</a>
+        <div id="mobileNav" class="hidden md:hidden px-4 pt-2 pb-6 border-t border-slate-200 bg-white space-y-3 text-sm font-medium">
+            <a href="#about" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700">About</a>
+            <a href="#curriculum" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700">Curriculum</a>
+            <a href="#coordinators" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700">Coordinators</a>
+            <a href="#logistics" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700">Logistics & Accommodation</a>
+            <a href="#recap" onclick="toggleMobileNav()" class="block py-1.5 text-slate-700">2024 Edition Recap</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-grid-pattern">
+    <section class="relative py-16 sm:py-24 border-b border-slate-200 bg-grid-pattern">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-8 space-y-6">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-acm-blue text-xs font-mono font-semibold">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-50 border border-blue-200 text-acm-blue text-xs font-mono font-semibold">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>ACM India Seasonal Academic School</span>
                     </div>
 
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
                         ACM India Winter School <span class="text-acm-blue">2026</span>
                     </h1>
 
                     <!-- Theme Banner -->
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border-l-4 border-l-acm-blue border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="p-6 rounded-2xl bg-white border-l-4 border-l-acm-blue border border-slate-200 shadow-sm">
                         <span class="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">PROGRAMME THEME</span>
-                        <p class="text-xl sm:text-2xl font-serif text-slate-900 dark:text-slate-100 font-semibold italic leading-snug">
+                        <p class="text-xl sm:text-2xl font-serif text-slate-900 font-semibold italic leading-snug">
                             "From Information to Knowledge: Information Retrieval and Natural Language Processing"
                         </p>
                     </div>
 
-                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
                         An intensive 10-day winter school focusing on the computational foundations of finding, processing, interpreting, and organizing textual information through conceptual lectures, hands-on labs, and research mentorship.
                     </p>
 
                     <!-- Info Meta Pills -->
-                    <div class="flex flex-wrap gap-3 text-xs font-semibold text-slate-700 dark:text-slate-300 pt-2">
-                        <div class="flex items-center space-x-2 bg-white dark:bg-slate-900 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="flex flex-wrap gap-3 text-xs font-semibold text-slate-700 pt-2">
+                        <div class="flex items-center space-x-2 bg-white px-3.5 py-2 rounded-lg border border-slate-200 shadow-sm">
                             <i class="fa-solid fa-calendar-days text-acm-blue"></i>
                             <span>Dec 14, 2026 – Dec 24, 2026</span>
                         </div>
-                        <div class="flex items-center space-x-2 bg-white dark:bg-slate-900 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="flex items-center space-x-2 bg-white px-3.5 py-2 rounded-lg border border-slate-200 shadow-sm">
                             <i class="fa-solid fa-location-dot text-acm-blue"></i>
                             <span>SRM University-AP, Andhra Pradesh</span>
                         </div>
@@ -178,23 +158,23 @@
 
                 <!-- Countdown & Registration Box -->
                 <div class="lg:col-span-4">
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg space-y-6">
-                        <div class="border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-lg space-y-6">
+                        <div class="border-b border-slate-100 pb-4">
                             <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-1">EVENT COUNTDOWN</span>
                             <div class="grid grid-cols-4 gap-2 text-center font-mono mt-3">
-                                <div class="bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+                                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
                                     <span id="cd-days" class="text-lg font-bold text-acm-blue block">--</span>
                                     <span class="text-[9px] text-slate-400 uppercase">Days</span>
                                 </div>
-                                <div class="bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+                                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
                                     <span id="cd-hours" class="text-lg font-bold text-acm-blue block">--</span>
                                     <span class="text-[9px] text-slate-400 uppercase">Hours</span>
                                 </div>
-                                <div class="bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+                                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
                                     <span id="cd-mins" class="text-lg font-bold text-acm-blue block">--</span>
                                     <span class="text-[9px] text-slate-400 uppercase">Mins</span>
                                 </div>
-                                <div class="bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+                                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
                                     <span id="cd-secs" class="text-lg font-bold text-acm-blue block">--</span>
                                     <span class="text-[9px] text-slate-400 uppercase">Secs</span>
                                 </div>
@@ -202,9 +182,13 @@
                         </div>
 
                         <div class="space-y-2.5 text-xs">
-                            <div class="flex justify-between py-1 border-b border-slate-100 dark:border-slate-800">
+                            <div class="flex justify-between py-1 border-b border-slate-100">
                                 <span class="text-slate-500">Duration</span>
-                                <span class="font-bold text-slate-800 dark:text-slate-200">10 Full Days</span>
+                                <span class="font-bold text-slate-800">10 Full Days</span>
+                            </div>
+                            <div class="flex justify-between py-1">
+                                <span class="text-slate-500">Accommodation</span>
+                                <span class="font-bold text-slate-800">Twin-Sharing AC Hostel</span>
                             </div>
                         </div>
 
@@ -219,24 +203,24 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 border-b border-slate-200 dark:border-slate-800">
+    <section id="about" class="py-20 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mb-12">
                 <span class="text-xs font-mono uppercase tracking-widest text-acm-blue font-bold">BACKGROUND & OBJECTIVES</span>
-                <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">About the Winter School</h2>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-1">About the Winter School</h2>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <div class="lg:col-span-8 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover shadow-sm space-y-4">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Academic Scope & Vision</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        <strong class="text-slate-900 dark:text-white">"From Information to Knowledge: Information Retrieval and Natural Language Processing"</strong> connects Information Retrieval with Natural Language Processing, Information Extraction, Knowledge Representation, Semantic Search, Question Answering, and Multilingual Information Access through conceptual lectures, hands-on laboratories, and research-oriented discussions.
+                <div class="lg:col-span-8 p-8 rounded-2xl bg-white border border-slate-200 card-hover shadow-sm space-y-4">
+                    <h3 class="text-xl font-bold text-slate-900">Academic Scope & Vision</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        <strong class="text-slate-900">"From Information to Knowledge: Information Retrieval and Natural Language Processing"</strong> connects Information Retrieval with Natural Language Processing, Information Extraction, Knowledge Representation, Semantic Search, Question Answering, and Multilingual Information Access through conceptual lectures, hands-on laboratories, and research-oriented discussions.
                     </p>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p class="text-sm text-slate-600 leading-relaxed">
                         Participants will engage with foundational concepts as well as cutting-edge research paradigms under the direct guidance of prominent academics and industry researchers.
                     </p>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-slate-100 dark:border-slate-800 text-xs">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-slate-100 text-xs">
                         <div class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-circle-check text-acm-blue mt-0.5"></i>
                             <span>Conceptual & algorithmic lectures</span>
@@ -257,14 +241,14 @@
                 </div>
 
                 <!-- Host Details Box -->
-                <div class="lg:col-span-4 p-6 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white font-mono">Host Institution</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <div class="lg:col-span-4 p-6 rounded-2xl bg-slate-100 border border-slate-200 space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">Host Institution</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
                         <strong>SRM University-AP</strong>, Andhra Pradesh, Neerukonda, Mangalagiri Mandal, Guntur District, Andhra Pradesh - 522240, India.
                     </p>
-                    <div class="pt-3 border-t border-slate-200 dark:border-slate-800 font-mono text-xs text-slate-500">
+                    <div class="pt-3 border-t border-slate-200 font-mono text-xs text-slate-500">
                         <span>Hosted by:</span>
-                        <strong class="block text-slate-800 dark:text-slate-200 font-sans mt-0.5">SRM University-AP ACM Student Chapter with the Department of CSE</strong>
+                        <strong class="block text-slate-800 font-sans mt-0.5">SRM University-AP ACM Student Chapter with the Department of CSE</strong>
                     </div>
                 </div>
             </div>
@@ -272,85 +256,85 @@
     </section>
 
     <!-- Curriculum Section (Searchable & Interactive) -->
-    <section id="curriculum" class="py-20 border-b border-slate-200 dark:border-slate-800 bg-slate-100/50 dark:bg-slate-950/50">
+    <section id="curriculum" class="py-20 border-b border-slate-200 bg-slate-100/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
                     <span class="text-xs font-mono uppercase tracking-widest text-acm-blue font-bold">ACADEMIC SYLLABUS</span>
-                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">List of Topics Covered</h2>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1">List of Topics Covered</h2>
                 </div>
 
                 <!-- Live Search Box -->
                 <div class="relative w-full md:w-72">
                     <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
-                    <input type="text" id="topicSearch" oninput="filterTopics()" placeholder="Search modules & topics..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-acm-blue">
+                    <input type="text" id="topicSearch" oninput="filterTopics()" placeholder="Search modules & topics..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 bg-white text-xs focus:outline-none focus:border-acm-blue">
                 </div>
             </div>
 
             <!-- Topics Grid -->
             <div id="topicsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover">
-                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">TOPIC 01</div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Foundations of Information Retrieval</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Inverted index, Boolean models, tokenization, stemming, lemmatization, and text preprocessing baselines.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">TOPIC 01</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Foundations of Information Retrieval</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Inverted index, Boolean models, tokenization, stemming, lemmatization, and text preprocessing baselines.</p>
                 </div>
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover">
-                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">TOPIC 02</div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Retrieval Models, Ranking and Evaluation</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Vector space models, TF-IDF, BM25, Learning to Rank, MAP, NDCG, trec_eval, and ir_measures metrics.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">TOPIC 02</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Retrieval Models, Ranking and Evaluation</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Vector space models, TF-IDF, BM25, Learning to Rank, MAP, NDCG, trec_eval, and ir_measures metrics.</p>
                 </div>
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover">
-                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">TOPIC 03</div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Foundations of Natural Language Processing</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Language modeling, POS tagging, dependency parsing, sequence labeling, and classical statistical NLP.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">TOPIC 03</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Foundations of Natural Language Processing</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Language modeling, POS tagging, dependency parsing, sequence labeling, and classical statistical NLP.</p>
                 </div>
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover">
-                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">TOPIC 04</div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Language Representation & Semantic Processing</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Word embeddings, contextual representation, self-attention, and Hugging Face transformer architectures.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">TOPIC 04</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Language Representation & Semantic Processing</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Word embeddings, contextual representation, self-attention, and Hugging Face transformer architectures.</p>
                 </div>
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover">
-                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">TOPIC 05</div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Information Extraction & Knowledge Discovery</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Named Entity Recognition (NER), relation extraction, Knowledge Graphs, and entity linking.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">TOPIC 05</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Information Extraction & Knowledge Discovery</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Named Entity Recognition (NER), relation extraction, Knowledge Graphs, and entity linking.</p>
                 </div>
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover">
-                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">TOPIC 06</div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Semantic Search & Question Answering</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Dense passage retrieval, vector databases (FAISS), RAG models, and open-domain QA.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">TOPIC 06</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Semantic Search & Question Answering</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Dense passage retrieval, vector databases (FAISS), RAG models, and open-domain QA.</p>
                 </div>
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover">
-                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">TOPIC 07</div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Multilingual & Indian-Language Information Access</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Cross-lingual IR, Indic-NLP encoders, transliteration, and low-resource text processing.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">TOPIC 07</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Multilingual & Indian-Language Information Access</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Cross-lingual IR, Indic-NLP encoders, transliteration, and low-resource text processing.</p>
                 </div>
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover">
-                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">TOPIC 08</div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">From Information to Knowledge: Research Directions</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Research problem identification, open challenges, hallucination, and future research pathways.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+                    <div class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">TOPIC 08</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">From Information to Knowledge: Research Directions</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Research problem identification, open challenges, hallucination, and future research pathways.</p>
                 </div>
 
-                <div class="topic-card p-6 rounded-2xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800 card-hover">
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Hands-on Code</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Practical modules on text retrieval, information extraction, semantic search, and question answering in Python.</p>
+                <div class="topic-card p-6 rounded-2xl bg-white text-slate-800 border border-slate-200 card-hover">
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Hands-on Code</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Practical modules on text retrieval, information extraction, semantic search, and question answering in Python.</p>
                 </div>
 
             </div>
 
             <!-- Prerequisites & Software Stack -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                    <h3 class="text-xs font-bold font-mono text-slate-900 dark:text-white uppercase tracking-wider mb-3">Background & Recommended Prerequisites</h3>
-                    <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
+                <div class="p-6 rounded-2xl bg-white border border-slate-200">
+                    <h3 class="text-xs font-bold font-mono text-slate-900 uppercase tracking-wider mb-3">Background & Recommended Prerequisites</h3>
+                    <ul class="text-xs space-y-2 text-slate-600">
                         <li class="flex items-start space-x-2">
                             <i class="fa-solid fa-angle-right text-acm-blue mt-0.5"></i>
                             <span>Basic knowledge of Python programming, data structures, and algorithms.</span>
@@ -366,18 +350,18 @@
                     </ul>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                    <h3 class="text-xs font-bold font-mono text-slate-900 dark:text-white uppercase tracking-wider mb-3">Software Stack & Environments</h3>
+                <div class="p-6 rounded-2xl bg-white border border-slate-200">
+                    <h3 class="text-xs font-bold font-mono text-slate-900 uppercase tracking-wider mb-3">Software Stack & Environments</h3>
                     <div class="flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Jupyter / Google Colab</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">NLTK</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">spaCy</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Hugging Face Transformers</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Elasticsearch / Lucene</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">FAISS</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">trec_eval</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">ir_measures</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">Python</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">Jupyter / Google Colab</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">NLTK</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">spaCy</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">Hugging Face Transformers</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">Elasticsearch / Lucene</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">FAISS</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">trec_eval</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700">ir_measures</span>
                     </div>
                 </div>
             </div>
@@ -386,25 +370,25 @@
     </section>
 
     <!-- Coordinators Section -->
-    <section id="coordinators" class="py-20 border-b border-slate-200 dark:border-slate-800">
+    <section id="coordinators" class="py-20 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mb-12">
                 <span class="text-xs font-mono uppercase tracking-widest text-acm-blue font-bold">ORGANIZING COMMITTEES</span>
-                <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Programme Coordinators</h2>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Programme Coordinators</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                 <!-- Academic Coordinator -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover flex flex-col justify-between">
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover flex flex-col justify-between">
                     <div>
-                        <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-acm-blue inline-block mb-3 border border-blue-100 dark:border-blue-900">ACADEMIC COORDINATOR</span>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Dr. Sriparna Saha</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Associate Professor</p>
+                        <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-blue-50 text-acm-blue inline-block mb-3 border border-blue-100">ACADEMIC COORDINATOR</span>
+                        <h3 class="text-lg font-bold text-slate-900">Dr. Sriparna Saha</h3>
+                        <p class="text-xs text-slate-600 mt-1">Associate Professor</p>
                         <p class="text-xs text-slate-500">Department of Computer Science & Engineering</p>
-                        <p class="text-xs font-semibold text-slate-800 dark:text-slate-200 mt-1">IIT Patna</p>
+                        <p class="text-xs font-semibold text-slate-800 mt-1">IIT Patna</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 mt-6">
+                    <div class="pt-4 border-t border-slate-100 mt-6">
                         <a href="mailto:sriparna.saha@gmail.com" class="text-xs font-mono text-acm-blue hover:underline flex items-center space-x-2">
                             <i class="fa-regular fa-envelope"></i>
                             <span>sriparna.saha@gmail.com</span>
@@ -413,15 +397,15 @@
                 </div>
 
                 <!-- Local Coordinator 1 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover flex flex-col justify-between">
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover flex flex-col justify-between">
                     <div>
-                        <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 inline-block mb-3">LOCAL COORDINATOR</span>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Dr. Priyanka</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Associate Professor and Associate HoD</p>
+                        <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-100 text-slate-700 inline-block mb-3">LOCAL COORDINATOR</span>
+                        <h3 class="text-lg font-bold text-slate-900">Dr. Priyanka</h3>
+                        <p class="text-xs text-slate-600 mt-1">Associate Professor and Associate HoD</p>
                         <p class="text-xs text-slate-500">Department of CSE</p>
-                        <p class="text-xs font-semibold text-slate-800 dark:text-slate-200 mt-1">SRM University-AP</p>
+                        <p class="text-xs font-semibold text-slate-800 mt-1">SRM University-AP</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 mt-6">
+                    <div class="pt-4 border-t border-slate-100 mt-6">
                         <a href="mailto:priyanka.s@srmap.edu.in" class="text-xs font-mono text-acm-blue hover:underline flex items-center space-x-2">
                             <i class="fa-regular fa-envelope"></i>
                             <span>priyanka.s@srmap.edu.in</span>
@@ -430,15 +414,15 @@
                 </div>
 
                 <!-- Local Coordinator 2 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-hover flex flex-col justify-between">
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover flex flex-col justify-between">
                     <div>
-                        <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 inline-block mb-3">LOCAL COORDINATOR</span>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Dr. Vinnakota Saran Chaitanya</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Assistant Professor</p>
+                        <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-100 text-slate-700 inline-block mb-3">LOCAL COORDINATOR</span>
+                        <h3 class="text-lg font-bold text-slate-900">Dr. Vinnakota Saran Chaitanya</h3>
+                        <p class="text-xs text-slate-600 mt-1">Assistant Professor</p>
                         <p class="text-xs text-slate-500">Department of CSE</p>
-                        <p class="text-xs font-semibold text-slate-800 dark:text-slate-200 mt-1">SRM University-AP</p>
+                        <p class="text-xs font-semibold text-slate-800 mt-1">SRM University-AP</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 mt-6">
+                    <div class="pt-4 border-t border-slate-100 mt-6">
                         <a href="mailto:saranchaitanya.v@srmap.edu.in" class="text-xs font-mono text-acm-blue hover:underline flex items-center space-x-2">
                             <i class="fa-regular fa-envelope"></i>
                             <span>saranchaitanya.v@srmap.edu.in</span>
@@ -451,34 +435,34 @@
     </section>
 
     <!-- Logistics Section -->
-    <section id="logistics" class="py-20 border-b border-slate-200 dark:border-slate-800 bg-slate-100/50 dark:bg-slate-950/50">
+    <section id="logistics" class="py-20 border-b border-slate-200 bg-slate-100/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-sm">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     
                     <div class="lg:col-span-7 space-y-4">
                         <span class="text-xs font-mono uppercase tracking-widest text-acm-blue font-bold">ACCOMMODATION & FACILITY</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Campus Residential Facilities</h2>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Campus Residential Facilities</h2>
+                        <p class="text-sm text-slate-600 leading-relaxed">
                             Twin-sharing, air-conditioned rooms will be provided to registered participants inside the SRM University-AP campus hostel.
                         </p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
-                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
                                 <i class="fa-solid fa-snowflake text-acm-blue text-base mb-2"></i>
-                                <h4 class="font-bold text-slate-900 dark:text-white">Air-Conditioned Stay</h4>
+                                <h4 class="font-bold text-slate-900">Air-Conditioned Stay</h4>
                                 <p class="text-slate-500 mt-1">Twin-sharing rooms in campus hostel.</p>
                             </div>
-                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
                                 <i class="fa-solid fa-shield-halved text-acm-blue text-base mb-2"></i>
-                                <h4 class="font-bold text-slate-900 dark:text-white">24/7 Security & Labs</h4>
+                                <h4 class="font-bold text-slate-900">24/7 Security & Labs</h4>
                                 <p class="text-slate-500 mt-1">Round-the-clock campus security and Wi-Fi access.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 p-6 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-3 text-xs">
-                        <h4 class="font-bold text-slate-900 dark:text-white font-mono uppercase text-sm">Venue Address</h4>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <div class="lg:col-span-5 p-6 rounded-2xl bg-slate-100 border border-slate-200 space-y-3 text-xs">
+                        <h4 class="font-bold text-slate-900 font-mono uppercase text-sm">Venue Address</h4>
+                        <p class="text-slate-600 leading-relaxed">
                             SRM University-AP, Andhra Pradesh, Neerukonda, Mangalagiri Mandal, Guntur District, Andhra Pradesh - 522240, India.
                         </p>
                     </div>
@@ -489,30 +473,30 @@
     </section>
 
     <!-- 2024 Edition Recap -->
-    <section id="recap" class="py-20 border-b border-slate-200 dark:border-slate-800">
+    <section id="recap" class="py-20 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold">PREVIOUS EDITION</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">ACM Winter School 2024 Recap</h2>
+                <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 font-bold">PREVIOUS EDITION</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">ACM Winter School 2024 Recap</h2>
                 <p class="text-xs font-mono text-slate-500 mt-1">"Decoding AI: Building Explainable and Robust Intelligence" (Dec 12 – Dec 24, 2024)</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
                     <span class="text-4xl font-extrabold text-acm-blue font-mono">22+</span>
-                    <h3 class="text-xs font-bold text-slate-900 dark:text-white uppercase font-mono mt-2">Institutions Represented</h3>
+                    <h3 class="text-xs font-bold text-slate-900 uppercase font-mono mt-2">Institutions Represented</h3>
                     <p class="text-xs text-slate-500 mt-1">Participants gathered from across universities in India.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
                     <span class="text-4xl font-extrabold text-emerald-500 font-mono">2 Weeks</span>
-                    <h3 class="text-xs font-bold text-slate-900 dark:text-white uppercase font-mono mt-2">XAI Modules</h3>
+                    <h3 class="text-xs font-bold text-slate-900 uppercase font-mono mt-2">XAI Modules</h3>
                     <p class="text-xs text-slate-500 mt-1">Lectures by Dr. Abhishek Singh, Prof. Sumantra Dutta Roy, and Prof. Nibaran Das.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
                     <span class="text-4xl font-extrabold text-indigo-500 font-mono">100%</span>
-                    <h3 class="text-xs font-bold text-slate-900 dark:text-white uppercase font-mono mt-2">Hands-on Mentorship</h3>
+                    <h3 class="text-xs font-bold text-slate-900 uppercase font-mono mt-2">Hands-on Mentorship</h3>
                     <p class="text-xs text-slate-500 mt-1">Laboratory exercises and research guidance.</p>
                 </div>
             </div>
@@ -520,10 +504,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-white dark:bg-slate-950 text-slate-500 text-xs border-t border-slate-200 dark:border-slate-800">
+    <footer class="py-10 bg-white text-slate-500 text-xs border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center space-x-3">
-                <span class="font-bold text-slate-900 dark:text-white">ACM SRM AP Chapter</span>
+                <span class="font-bold text-slate-900">ACM SRM AP Chapter</span>
                 <span>•</span>
                 <span>ACM India Winter School 2026</span>
             </div>
@@ -533,35 +517,6 @@
 
     <!-- JavaScript Logic -->
     <script>
-        // Force Light Mode by default on fresh launch
-        function initTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const icon = document.getElementById('themeIcon');
-            
-            if (savedTheme === 'dark') {
-                document.documentElement.classList.add('dark');
-                if (icon) icon.className = 'fa-solid fa-sun text-amber-500';
-            } else {
-                document.documentElement.classList.remove('dark');
-                if (icon) icon.className = 'fa-solid fa-moon text-slate-700';
-            }
-        }
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            const icon = document.getElementById('themeIcon');
-
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                icon.className = 'fa-solid fa-moon text-slate-700';
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                icon.className = 'fa-solid fa-sun text-amber-500';
-            }
-        }
-
         function toggleMobileNav() {
             document.getElementById('mobileNav').classList.toggle('hidden');
         }
@@ -604,7 +559,6 @@
         }
 
         window.onload = function() {
-            initTheme();
             startCountdown();
         };
     </script>
